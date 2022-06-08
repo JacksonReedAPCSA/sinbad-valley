@@ -16,8 +16,8 @@ public class Location{
         return name;
     }
     
-    public float temp(){
-        return temp;
+    public double temp(){
+        return (double) temp;
     }
 
     public String toString(){
