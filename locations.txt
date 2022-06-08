@@ -1,0 +1,3 @@
+Location Alaska = new Location("Alaska", "https://w1.weather.gov/xml/current_obs/PABT.xml);
+Location Hawaii = new Location("Hawaii", "https://w1.weather.gov/xml/current_obs/PHTO.xml);
+Location NewMexico = new Location("New Mexico", "https://w1.weather.gov/xml/current_obs/KABQ.xml)
