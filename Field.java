@@ -19,6 +19,26 @@ public class Field {
     }
   }
   
+  public boolean plantCropEfficient(Crop crop, int cropID, PlayerInventory inv, int r) {
+    boolean canPlant = false;
+    if((inv.getFunds() >= crop.getBuyValue() * 5) && (inv.hasEfficientUpgrade())) {
+      for(int c = 0; c < land[0].length; c++) {
+        switch(cropID){
+          case(0):
+            Potato p = new Potato();
+            plantCrop(p, inv, r, c);
+            break;
+          case(1):
+            Tomato t = new Tomato();
+            plantCrop(t, inv, r, c);
+            break;
+        }
+      }
+      canPlant = true;
+    }
+    return canPlant;
+  }
+  
   public void removeCrop(int r, int c) {
     land[r][c] = null;
   }
@@ -27,6 +47,7 @@ public class Field {
     if(!land[r][c].getAliveStatus()) {
       System.out.println("Your " + land[r][c].getCropName() + " at (" + r + "," + c + ") has died!");
       StdAudio.play("augh.wav");
+      StdAudio.play(StdAudio.note(0, 0.2, 0.7));
       removeCrop(r, c);
     }
   }
