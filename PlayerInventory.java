@@ -1,6 +1,6 @@
 public class PlayerInventory {
-  private double funds = 5.0;
-  private int waterUses = 5;
+  private double funds = 50;
+  private boolean efficientUpgrade = false;
   
   public PlayerInventory() {
   
@@ -18,12 +18,11 @@ public class PlayerInventory {
     return funds;
   }
   
-  public void useWater() {
-    waterUses--;
+  public boolean hasEfficientUpgrade() {
+    return efficientUpgrade;
   }
   
-  public void gainWater() {
-    waterUses++;
+  public void buyEfficientUpgrade() {
+    efficientUpgrade = true;
   }
-  
 }
