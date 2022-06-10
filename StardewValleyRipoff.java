@@ -53,9 +53,10 @@ public class StardewValleyRipoff {
     String cropChoice = "";
     int cropRow = 0;
     int cropCol = 0;
+    String buyUpgrade = "";
     boolean keepPlaying = true;
     while(inv.getFunds() < 100 && keepPlaying) {
-      System.out.println("What would you like to do? Options: [(P)lant crop, (A)ge field, (H)arvest field, (G)ive up, check (B)alance]");
+      System.out.println("What would you like to do? Options: [(P)lant crop, (E)fficient plant crop, (A)ge field, (H)arvest field, (G)ive up, check (B)alance, buy (U)pgrades]");
       userInput = scan.nextLine().toUpperCase();
       switch(userInput) {
         case("P"):
@@ -87,6 +88,42 @@ public class StardewValleyRipoff {
           break;
         case("B"):
           System.out.println("You currently have " + inv.getFunds() + "$ to your name.");
+          break;
+        case("E"):
+          System.out.println("What type of crop would you like to place? Options: [(P)otato 1$, (T)omato 2$]");
+          cropChoice = scan.nextLine().toUpperCase();
+          System.out.println("What row would you like to place the crops in? Options: [0, 1, 2, 3, 4]");
+          cropRow = scan.nextInt();
+          switch(cropChoice) {
+            case("P"):
+              Potato p = new Potato();
+              f.plantCropEfficient(p, 0, inv, cropRow);
+              break;
+            case("T"):
+              Tomato t = new Tomato();
+              f.plantCropEfficient(t, 1, inv, cropRow);
+              break;
+          }
+          break;
+        case("U"):
+          System.out.println("Welcome to the upgrades shop! Here you can buy efficient crop planting for 40$. Would you like to? Options [Y/N]");
+          buyUpgrade = scan.nextLine().toUpperCase();
+          switch(buyUpgrade) {
+            case("Y"):
+              if((inv.getFunds() >= 40) && (!inv.hasEfficientUpgrade())) {
+                inv.buyEfficientUpgrade();
+                inv.spendMoney(40);
+                System.out.println("Efficient crop planting upgrade successfully bought!");
+              }
+              else {
+                System.out.println("Could not buy upgrade, you either have insufficient funds or you've bought the upgrade alreadya!");
+              }
+              break;
+            case("N"):
+              System.out.println("Come again!");
+              break;
+                
+          }
       }
     }
     if(keepPlaying) {
