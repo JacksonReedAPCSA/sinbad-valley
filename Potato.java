@@ -25,7 +25,7 @@ public class Potato extends Crop {
     return name;
   }
   
-  public double getSellVal() {
+  public double getSellValue() {
     return sellVal;
   }
   
@@ -33,7 +33,7 @@ public class Potato extends Crop {
     return fullGrowth;
   }
   
-  public double getBuyVal() {
+  public double getBuyValue() {
     return buyVal;
   }
 }
