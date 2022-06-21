@@ -39,7 +39,7 @@ public abstract class Crop {
   
   public boolean harvest(PlayerInventory inv) {
     if(getAliveStatus() && growthStage >= getFullGrowth()) {
-      inv.gainMoney(getSellVal());
+      inv.gainMoney(getSellValue());
       health = 0;
       return true;
     }
@@ -48,7 +48,7 @@ public abstract class Crop {
         System.out.println("Your " + getCropName() + " is overripe. You can't harvest it anymore and it will die soon.");
       }
       else {
-        System.out.println("Your " + getName() + " is not fully grown yet!");
+        System.out.println("Your " + getCropName() + " is not fully grown yet!");
       }
       return false;
     }
