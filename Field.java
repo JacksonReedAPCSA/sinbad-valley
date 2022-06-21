@@ -9,13 +9,13 @@ public class Field {
   }
   
   public void plantCrop(Crop crop, PlayerInventory inv, int r, int c) {
-    if(land[r][c] == null && inv.getFunds() >= crop.getBuyVal()) {
-      inv.spendMoney(crop.getBuyVal());
+    if(land[r][c] == null && inv.getFunds() >= crop.getBuyValue()) {
+      inv.spendMoney(crop.getBuyValue());
       land[r][c] = crop;
-      System.out.println(crop.getName() + " planted successfully!");
+      System.out.println(crop.getCropName() + " planted successfully!");
     }
     else {
-      System.out.println("Could not place a " + crop.getName() + " there. Something might already be growing there or you might have insufficient funds. Amount required: " + crop.getBuyVal() + "$. You have: " + inv.getFunds() + "$");
+      System.out.println("Could not place a " + crop.getCropName() + " there. Something might already be growing there or you might have insufficient funds. Amount required: " + crop.getBuyValue() + "$. You have: " + inv.getFunds() + "$");
     }
   }
   

@@ -1,3 +1,8 @@
+/**
+ * TODO: Add class description!
+ *
+ * @author TODO: Damian? Andrei?
+ */
 public abstract class Crop {
   private int health = 100;
   private boolean isAlive = true;
@@ -13,10 +18,6 @@ public abstract class Crop {
   
   public int getHealth() {
     return health;
-  }
-  
-  public String getCropName() {
-    return getName();
   }
   
   public void dieCheck() {
@@ -38,7 +39,7 @@ public abstract class Crop {
   
   public boolean harvest(PlayerInventory inv) {
     if(getAliveStatus() && growthStage >= getFullGrowth()) {
-      inv.gainMoney(getSellVal());
+      inv.gainMoney(getSellValue());
       health = 0;
       return true;
     }
@@ -47,24 +48,16 @@ public abstract class Crop {
         System.out.println("Your " + getCropName() + " is overripe. You can't harvest it anymore and it will die soon.");
       }
       else {
-        System.out.println("Your " + getName() + " is not fully grown yet!");
+        System.out.println("Your " + getCropName() + " is not fully grown yet!");
       }
       return false;
     }
   }
   
-  public double getSellValue() {
-    return getSellVal();
-  }
-  
-  public double getBuyValue() {
-    return getBuyVal();
-  }
-  
+  public abstract String getCropName();
+  public abstract double getSellValue();
+  public abstract double getBuyValue();  
   public abstract double getLTemp();
   public abstract double getUTemp();
-  public abstract String getName();
   public abstract int getFullGrowth();
-  public abstract double getSellVal();
-  public abstract double getBuyVal();
 }

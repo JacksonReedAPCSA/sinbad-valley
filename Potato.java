@@ -1,3 +1,6 @@
+/**
+ * TODO: Class description, author tag!
+ */
 public class Potato extends Crop {
   private static final double lTemp = 10.0;
   private static final double uTemp = 32.2;
@@ -18,11 +21,11 @@ public class Potato extends Crop {
     return uTemp;
   }
   
-  public String getName() {
+  public String getCropName() {
     return name;
   }
   
-  public double getSellVal() {
+  public double getSellValue() {
     return sellVal;
   }
   
@@ -30,7 +33,7 @@ public class Potato extends Crop {
     return fullGrowth;
   }
   
-  public double getBuyVal() {
+  public double getBuyValue() {
     return buyVal;
   }
 }
