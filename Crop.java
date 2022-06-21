@@ -15,10 +15,6 @@ public abstract class Crop {
     return health;
   }
   
-  public String getCropName() {
-    return getName();
-  }
-  
   public void dieCheck() {
     isAlive = ((health <= 0) || (growthStage > getFullGrowth() + 2))? false : true;
   }
@@ -53,18 +49,10 @@ public abstract class Crop {
     }
   }
   
-  public double getSellValue() {
-    return getSellVal();
-  }
-  
-  public double getBuyValue() {
-    return getBuyVal();
-  }
-  
+  public abstract String getCropName();
+  public abstract double getSellValue();
+  public abstract double getBuyValue();  
   public abstract double getLTemp();
   public abstract double getUTemp();
-  public abstract String getName();
   public abstract int getFullGrowth();
-  public abstract double getSellVal();
-  public abstract double getBuyVal();
 }
