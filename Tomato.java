@@ -1,3 +1,6 @@
+/**
+ * TODO: Class description, author tag!
+ */
 public class Tomato extends Crop {
   private static final double lTemp = 12.7;
   private static final double uTemp = 26.6;
@@ -18,7 +21,7 @@ public class Tomato extends Crop {
     return uTemp;
   }
   
-  public String getName() {
+  public String getCropName() {
     return name;
   }
   
