@@ -1,3 +1,8 @@
+/**
+ * TODO: Add class description!
+ *
+ * @author TODO: Damian? Andrei?
+ */
 public abstract class Crop {
   private int health = 100;
   private boolean isAlive = true;
